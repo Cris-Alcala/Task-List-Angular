@@ -1,0 +1,78 @@
+<app-popup *ngIf="deleted !== undefined" [task]="deleted"></app-popup>
+<div class="tables">
+  <table>
+    <caption>
+      Tareas Pendientes
+    </caption>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+        <th *ngIf="isModifying">Modificar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of taskList">
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+          <button (click)="deleteCompletedTask(task.id)">Eliminar</button>
+          <button (click)="startModifying(task)">Editar</button>
+          <button (click)="completeTask(task.id)">Completar</button>
+        </td>
+        <td *ngIf="isModifying && tareaActual == task">
+          <form [formGroup]="form" (ngSubmit)="modTask()">
+            <input
+              type="text"
+              formControlName="id_mod"
+              ngModel="{{ task.id }}"
+              hidden
+            />
+            <label>
+              <p>Titulo</p>
+              <input
+                type="text"
+                name="title_mod"
+                formControlName="title_mod"
+                ngModel="{{ task.title }}"
+              />
+            </label>
+            <label>
+              <p>Descripción</p>
+              <textarea
+                name="description"
+                formControlName="description_mod"
+                ngModel="{{ task.description }}"
+              ></textarea>
+            </label>
+            <button type="submit">Modificar</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <table>
+    <caption>
+      Tareas Completadas
+    </caption>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of resolvedList">
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>
+          <button (click)="deleteUncompletedTask(task.id)">Eliminar</button>
+          <button (click)="unCompleteTask(task.id)">Revertir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

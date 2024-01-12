@@ -1,0 +1,19 @@
+<div class="home-component">
+    <div class="input-form">
+        <form [formGroup]="form" (ngSubmit)="addTask()">
+            <label>
+                <input type="text" name="title" formControlName="title" #title placeholder="Escribe un título de la tarea">
+            </label>
+            <label>
+                <textarea name="description" formControlName="description" #description placeholder="Describe la tarea"></textarea>
+            </label>
+            <button type="submit">Añadir</button>
+        </form>
+        <button (click)="delAllTasks()" *ngIf="!emptyLists">Eliminar todas las tareas</button>
+        <button (click)="delCompletedTasks()" *ngIf="!emptyResolvedList">Eliminar tareas completadas</button>
+    </div>
+    <app-tasklist [taskList]="getTasklist" [resolvedList]="getResolvedList" *ngIf="!emptyLists"></app-tasklist>
+    <div class="empty-msg" *ngIf="emptyLists">
+        <p>No hay tareas registradas</p>
+    </div>
+</div>

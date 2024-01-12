@@ -1,0 +1,279 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+* {
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+}
+
+button {
+    color: black;
+}
+
+body {
+    background: rgb(10, 0, 27);
+}
+
+app-popup {
+    font-size:20px;
+    position: absolute;
+    top: 5%;
+    left: 56%;
+    transform: translate(-50%);
+    background: #c02eff21;
+    padding: .5em;
+    border-radius: 1em;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.287);
+
+}
+
+.principal-content {
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em 0;
+}
+
+header h1 {
+    background: -webkit-linear-gradient(#2767ff,#c02eff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px #c02effbc;
+}
+
+header img {
+    filter:drop-shadow(2px 2px 8px #c02effbc);
+}
+
+.home-component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.input-form button {
+    padding: .5em;
+    border: 2px solid #ff2e2e;
+    background: rgba(255, 255, 255, 0.148);
+    color: white;
+    border-radius: .5em;
+    font-size: 1.2em;
+    transition: all 300ms;
+    margin-bottom: .5em;
+}
+
+.input-form button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px 3px #c02eff;
+    background: rgb(255, 0, 0);
+}
+
+.input-form > form {
+    min-width: 750px;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.input-form > form input, .input-form > form textarea {
+    width: 95%;
+    padding: .5em;
+    border: 10px double #c02eff7e;
+    border-radius: .5em;
+    background: rgba(255, 255, 255, 0.148);
+    outline: none;
+    font-size: 1em;
+    transition: all 500ms;
+}
+
+textarea {
+    resize: none;
+}
+.input-form > form input:focus, .input-form > form textarea:focus {
+    border: 10px double #c02eff;
+    outline: none;
+    box-shadow: 2px 2px 8px #c02effbc;
+}
+
+.input-form > form button {
+    padding: .5em;
+    border: 2px solid #c02eff;
+    background: rgba(255, 255, 255, 0.148);
+    color: white;
+    border-radius: .5em;
+    font-size: 1.2em;
+    transition: all 300ms;
+}
+
+.input-form > form button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px 3px #c02eff;
+    background: rgba(255, 255, 255, 0.148);
+}
+
+.empty-msg {
+    background-color: rgba(255, 0, 0, 0.403);
+    width: 80%;
+    text-align: center;
+    margin-top: 2em;
+    border-radius: .5em;
+    box-shadow: 1px 1px 10px 3px rgba(255, 0, 0, 0.53);
+    border: 3px solid rgba(255, 0, 0, 0.215);
+}
+
+.tables {
+    min-width: 1300px;
+    max-width: 1300px;
+    width: 100%;
+    margin-top: 2em;
+    border-left: 10px double #c02eff5f;
+    border-right: 10px double #c02eff5f;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.tables table {
+    width: 100%;
+}
+
+.tables table, .tables table th, .tables table td {
+    padding: .5em;
+    text-align: center;
+}
+
+.tables th {
+    font-size: 1.5em;
+}
+
+.tables input {
+    color: black;
+}
+
+caption {
+    font-size: 2em;
+    text-shadow: 1px 2px 10px #c02eff;
+    margin: 1em;
+}
+
+table button {
+    padding: .4em;
+    border: 2px solid #c02eff;
+    background: rgba(255, 255, 255, 0.148);
+    color: white;
+    border-radius: .5em;
+    font-size: 1em;
+    transition: all 300ms;
+    margin: 1em;
+}
+
+table button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px .5px #c02eff;
+}
+
+.tables table tr td:last-child form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tables table tr td:last-child form input,
+.tables table tr td:last-child form textarea {
+    width: 95%;
+    padding: .3em;
+    border: 10px double #c02eff7e;
+    border-radius: .5em;
+    background: rgba(255, 255, 255, 0.148);
+    outline: none;
+    font-size: 1em;
+    transition: all 500ms;
+    color: white;
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.194);
+    margin-bottom: 3em;
+}
+
+footer {
+    text-align: center;
+    padding: 3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img {
+    width: 50%;
+    filter: invert();
+}
+
+a {
+    width: 5%;
+}
+
+@media (max-width:1390px) {
+    .input-form > form {
+        min-width: 350px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 2em;
+        margin-bottom: 2em;
+    }
+    .input-form > form input, .input-form > form textarea, .input-form > form button {
+        min-width: 350px;
+        max-width: 350px;
+        width: 100%;
+    }
+    .tables {
+        min-width: 300px;
+        max-width: 300px;
+        width: 100%;
+        border: none;
+        padding: 0;
+        font-size: .4em;
+    }
+    .home-component {
+        padding: 0;
+        margin: 0;
+    }
+    footer {
+        font-size: .5em;
+    }
+
+    footer img {
+        width: 100%;
+        margin-left: 1em;
+    }
+}
+
+
